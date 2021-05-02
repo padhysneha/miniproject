@@ -18,6 +18,6 @@ if($num==1)
 }
 else
 {
-    header('location:loginandregister.php');
+    header('location:login.php');
 }
 ?>

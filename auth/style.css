@@ -1,182 +1,22 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-.full-page {
-  height: 100vh;
-  width: 100%;
-  background: linear-gradient(white, rgba(0, 0, 0, 0.9));
-  position: absolute;
-}
-.navbar {
-  display: flex;
-  align-items: center;
-  padding: 20px;
-  padding-left: 50px;
-  padding-right: 30px;
-  padding-top: 10px;
-}
-.logo a {
-  text-decoration: none;
-  color: coral;
-  font-size: 20px;
-  font-family: "Dancing Script", cursive;
-}
-nav {
-  flex: 1;
-  text-align: right;
-  padding-top: 6px;
-}
-nav ul {
-  display: inline-block;
-  list-style: none;
-}
-nav ul li {
-  display: inline-block;
-  margin-right: 70px;
-}
-nav ul li a {
-  text-decoration: none;
-  font-size: 20px;
-  color: coral;
-  font-family: sans-serif;
-}
-nav ul li button {
-  font-size: 20px;
-  color: coral;
-  outline: none;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  font-family: sans-serif;
-}
-
-.img-1{
-  height: 100vh;
-}
-img{
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-/*.sub-page {
-  position: absolute;
-  background: url(abc.png);
+body{
+  background: linear-gradient(rgba(0, 0, 50, 0.5),rgba(0, 0, 50, 0.5)),url(abc1.png);
   background-size: cover;
   background-position: center;
 }
-.overlay {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), white);
-  opacity: 0;
-  transition: 1s;
-}*/
-.sub-page:hover .overlay {
-  opacity: 1;
+.login-box{
+  max-width: 700px;
+  float: none;
+  margin: 150px auto;
 }
-.text {
-  text-align: center;
-  color: white;
-  padding-right: 350px;
-  padding-left: 350px;
-  font-size: 25px;
-  font-family: "Chilanka", cursive;
-  transform: translateY(-220%);
-  opacity: 0;
-  transition: 1s;
+.login-left{
+  background: rgba(211, 211, 211, 0.5);
+  padding: 30px;
 }
-.sub-page:hover .text {
-  opacity: 1;
-}
-#login-form {
-  display: none;
-}
-.form-box {
-  width: 300px;
-  height: 400px;
-  position: relative;
-  top: 90px;
-  left: 500px;
-  background: rgba(0, 0, 0, 0.6);
-}
-.close {
-  position: relative;
-  left: 270px;
-  bottom: 0;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-.main-heading {
-  color: orangered;
-  padding-bottom: 20px;
-}
-.form {
-  position: relative;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  bottom: 20px;
-}
-.form input,
-.form1 input {
-  font-family: sans-serif;
-  outline: none;
-  border: none;
-  border-bottom: 1px solid black;
-  width: 100%;
-  margin: 0 0 15px;
-  padding: 15px;
-  font-size: 14px;
-}
-.form button,
-.form1 button {
-  font-family: sans-serif;
-  width: 100%;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  padding: 15px;
-  border: none;
-  background: coral;
-}
-.form .asking {
-  font-size: 12px;
-  margin: 15px 0 0;
-  color: white;
-}
-.form .asking a {
-  color: orangered;
-  text-decoration: none;
-}
-#register-form {
-  display: none;
-}
-.form-box1 {
-  width: 300px;
-  height: 400px;
-  position: relative;
-  top: 90px;
-  left: 500px;
-  background: rgba(0, 0, 0, 0.6);
-}
-.main-heading {
-  color: orangered;
-  padding-bottom: 20px;
-}
-.form1 {
-  position: relative;
-  margin: 0 auto 100px;
-  padding: 45px;
-  text-align: center;
-  bottom: 20px;
+.login-right{
+  background: #fff;
+  padding: 30px;
 }
 
+.form-control{
+  background-color: transparent !important;
+}

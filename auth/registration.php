@@ -1,6 +1,6 @@
 <?php
 session_start();
-header('location:loginandregister.php');
+header('location:login.php');
 $connection=mysqli_connect('localhost','root','');
 //$connection=mysqli_connect('localhost','root','write your password here')
 
@@ -21,5 +21,6 @@ else
 {
     $reg="insert into register_table(name,email_id,password) values('$name','$email','$password')";
     mysqli_query($connection,$reg);
+    echo "Registraion successful";
 }
 ?>
