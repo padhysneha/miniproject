@@ -13,11 +13,11 @@
     <li class="nav-item">
       <a class="nav-link" href="#">ADD TO CART</a>
     </li>
-    <li class="nav-item">
+    <!---<li class="nav-item">
       <a class="nav-link" onclick="document.getElementById('login-form').style.display='block'">LOGIN</a>
-    </li>
+    </li>--->
     <li class="nav-item">
-      <a class="nav-link" onclick="document.getElementById('register-form').style.display='block'" href="#">REGISTER</a>
+      <a class="nav-link" onclick="document.getElementById('register-form').style.display='block'" href="auth/logout.php">LOGOUT</a>
     </li>
   </ul>
   <!--<form class="form-inline ml-auto" action="/action_page.php">
@@ -25,7 +25,7 @@
     <button class="btn btn-success " type="submit">Search</button>
   </form>-->
 </nav>
-<div id='login-form' class="login-page">
+<!---<div id='login-form' class="login-page">
             <div class="form-box">
                 <span onclick="document.getElementById('login-form').style.display='none'" class="close">&times;</span>
                 <div class="form">
@@ -37,4 +37,4 @@
 				    </form>
                 </div>
             </div>
-        </div>
+        </div>-->

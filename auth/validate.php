@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-$connection=mysqli_connect('localhost','root','');
+$connection=mysqli_connect('localhost','root','123456');
 //$connection=mysqli_connect('localhost','root','write your password here')
 
-mysqli_select_db($connection,'csv_db 6');
+mysqli_select_db($connection,'csv_db6');
 
 $email=$_POST['emailid'];
 $password=$_POST['password'];
