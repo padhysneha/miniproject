@@ -85,7 +85,7 @@
           <h5><b>Total Amount Payable : </b><?= number_format($grand_total,2) ?>/-</h5>
         </div>
         <form action="" method="post" id="placeOrder">
-          <input type="hidden" name="products" value="<?= $allItems; ?>">
+          <input type="hidden" name="products" value="<?= $image; ?>">
           <input type="hidden" name="grand_total" value="<?= $grand_total; ?>">
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
