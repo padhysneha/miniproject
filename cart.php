@@ -107,12 +107,12 @@
               <tr>
                 <td><?= $row['id'] ?></td>
                 <input type="hidden" class="pid" value="<?= $row['id'] ?>">
-                <td><img src="<?= $row['product_image'] ?>" width="50"></td>
-                <td><?= $row['product_name'] ?></td>
+                <td><img src="<?= $row['image'] ?>" width="50"></td>
+                <td><?= $row['label'] ?></td>
                 <td>
-                  <i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row['product_price'],2); ?>
+                  <i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row['price'],2); ?>
                 </td>
-                <input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
+                <input type="hidden" class="pprice" value="<?= $row['price'] ?>">
                 <td>
                   <input type="number" class="form-control itemQty" value="<?= $row['qty'] ?>" style="width:75px;">
                 </td>
