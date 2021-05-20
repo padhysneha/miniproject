@@ -1,1 +1,1 @@
-commits by Sneha Padhy
+commits by Sneha S. Padhy
