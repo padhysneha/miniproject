@@ -99,10 +99,11 @@
                       <input type="number" class="form-control pqty" value="<?= $row['qty']?>">
                       </div>
                     </div>
+                    <input type="hidden" class="pid" value="<?= $row['id'] ?>">
                     <input type="hidden" class="pname" value="<?= $row['label'] ?>">
                     <input type="hidden" class="pprice" value="<?= $row['price'] ?>">
                     <input type="hidden" class="pimage" value="<?= $row['image'] ?>">
-                    <input type="hidden" class="pid" value="<?= $row['sender_id'] ?>">
+                    <input type="hidden" class="pqty" value="<?= $row['qty'] ?>">
                     <button class="btn btn-default btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;<a href="cart.php" class="nav-link">Add to
                   cart</a></button> 
                 </form>
@@ -131,21 +132,21 @@
     $(".addItemBtn").click(function(e) {
       e.preventDefault();
       var $form = $(this).closest(".form-submit");
+      var pid = $form.find(".pid").val();
       var pname = $form.find(".pname").val();
       var pprice = $form.find(".pprice").val();
       var pimage = $form.find(".pimage").val();
-      var pcode = $form.find(".pid").val();
       var pqty = $form.find(".pqty").val();
 
       $.ajax({
         url: 'cart.php',
         method: 'post',
         data: {
+          pid:pid;
           pname: pname,
           pprice: pprice,
-          pqty: pqty,
           pimage: pimage,
-          pid:pid;
+          pqty: pqty;
         },
         success: function(response) {
           $("#message").html(response);
