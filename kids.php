@@ -1,7 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,11 +15,11 @@
 <body>
 <?php include('navbar.php');?>
 <div class="container py-5">
-        <h2 class="text-center">Pants</h2>
+        <h2 class="text-center">Kids</h2>
         <div class="row mt-4">
         <?php
         require 'phpconnect.php';
-        $query = "SELECT * FROM book1 where label='Pants'";
+        $query = "SELECT * FROM book1 where kids='TRUE'";
         $query_run = mysqli_query($connection,$query);
         $check_faculty = mysqli_num_rows($query_run)>0;
 
@@ -54,7 +50,7 @@
                     <input type="hidden" class="pimage" value="<?= $row['image'] ?>">
                     <input type="hidden" class="pid" value="<?= $row['sender_id'] ?>">
                     <button class="btn btn-default btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;<a href="cart.php">Add to
-                  cart</a></button>                 </form>
+                  cart</a></button>               </form>
                  </div>
                 </div>
             </div>
@@ -121,7 +117,6 @@
     }
   });
   </script>
-                   
     <?php include('footer.php');?>
     </body>
     </html>

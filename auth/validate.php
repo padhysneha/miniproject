@@ -14,7 +14,7 @@ $result=mysqli_query($connection,$select);
 $num=mysqli_num_rows($result);
 if($num==1)
 {
-    header('location:/mainpage.php');
+    header('location:mainpage.php');
 }
 else
 {

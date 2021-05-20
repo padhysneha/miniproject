@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!DOCTYPE html>
-<html lang="en">
-<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial scale=1.0">
     <title>All Products</title>
@@ -37,7 +34,26 @@
                     <img src='images1/<?php echo $row['image']; ?>' width="250px" height="200px" alt="Clothes">
                     <div class="card-body">
                         <h6 class="card-title"><?php echo $row['label']; ?></h6>
+                        <h5 class="card-text text-danger"><i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row['price'],2) ?>/-</h5>
                     </div>
+                    <div class="card-footer p-1">
+                  <form action="" class="form-submit">
+                    <div class="row p-2">
+                      <div class="col-md-6 py-1 pl-4">
+                        <b>Quantity : </b>
+                      </div>
+                      <div class="col-md-6">
+                        <input type="number" class="form-control pqty" value="<?= $row['qty'] ?>">
+                      </div>
+                    </div>
+                    <input type="hidden" class="pname" value="<?= $row['label'] ?>">
+                    <input type="hidden" class="pprice" value="<?= $row['price'] ?>">
+                    <input type="hidden" class="pimage" value="<?= $row['image'] ?>">
+                    <input type="hidden" class="pid" value="<?= $row['sender_id'] ?>">
+                    
+                    <button class="btn btn-info btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add to
+                  cart</button>                  </form>
+                 </div>
                 </div>
             </div>
         
@@ -51,6 +67,58 @@
         ?>
         </div>
     </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
+
+  <script type="text/javascript">
+  $(document).ready(function() {
+
+    // Send product details in the server
+    $(".addItemBtn").click(function(e) {
+      e.preventDefault();
+      var $form = $(this).closest(".form-submit");
+      var pname = $form.find(".pname").val();
+      var pprice = $form.find(".pprice").val();
+      var pimage = $form.find(".pimage").val();
+      var pcode = $form.find(".pid").val();
+      var pqty = $form.find(".pqty").val();
+
+      $.ajax({
+        url: 'addtocart.php',
+        method: 'post',
+        data: {
+          pname: pname,
+          pprice: pprice,
+          pqty: pqty,
+          pimage: pimage,
+          pid:pid;
+        },
+        success: function(response) {
+          $("#message").html(response);
+          window.scrollTo(0, 0);
+          load_cart_item_number();
+        }
+      });
+    });
+
+    // Load total no.of items added in the cart and display in the navbar
+    load_cart_item_number();
+
+    function load_cart_item_number() {
+      $.ajax({
+        url: 'addtocart.php',
+        method: 'get',
+        data: {
+          cartItem: "cart_item"
+        },
+        success: function(response) {
+          $("#cart-item").html(response);
+        }
+      });
+    }
+  });
+  </script>
     <?php include('footer.php');?>
-    </body>
-    </html>
+</body>
+</html>

@@ -20,7 +20,7 @@
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" required>
             </div>
-            <button type="submit" class="btn-btn-dark">Login</button>
+            <button type="submit" class="btn-btn-dark" >Login</button>
             </form>
         </div>
         <div class="col-md-6 login-right">
