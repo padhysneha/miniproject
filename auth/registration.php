@@ -4,7 +4,7 @@ header('location:login.php');
 $connection=mysqli_connect('localhost','root','123456');
 //$connection=mysqli_connect('localhost','root','write your password here')
 
-mysqli_select_db($connection,'csv_db6');
+mysqli_select_db($connection,'cart_system');
 
 $name=$_POST['user'];
 $email=$_POST['emailid'];

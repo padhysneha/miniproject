@@ -15,7 +15,6 @@
 </head>
 </head>
 <body>
-<?php include('navbar.php');?>
 <div class="container py-5">
         <h2 class="text-center">Footwear</h2>
         <div class="row mt-4">
@@ -27,15 +26,15 @@
 
         if($check_faculty)
         {
-            while ($row = mysqli_fetch_array($query_run))
+            while ($row = mysqli_fetch_assoc($query_run))
             {
                 ?>
                 <div class="col-md-3 mt-3">
                     <div class="card">
-                    <img src='images1/<?php echo $row['image']; ?>' width="250px" height="200px" alt="Clothes">
+                    <img src='image/<?php echo $row['product_image']; ?>' width="250px" height="200px" alt="Clothes">
                     <div class="card-body">
-                        <h6 class="card-title"><?php echo $row['label']; ?></h6>
-                        <h5 class="card-text text-danger"><i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row['price'],2) ?>/-</h5>
+                        <h6 class="card-title"><?php echo $row[id]; ?></h6>
+                        <h5 class="card-text text-danger"><i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row[product_price],2) ?>/-</h5>
                     </div>
                     <div class="card-footer p-1">
                   <form action="" class="form-submit">
@@ -44,13 +43,13 @@
                         <b>Quantity : </b>
                       </div>
                       <div class="col-md-6">
-                        <input type="number" class="form-control pqty" value="<?= $row['qty'] ?>">
+                        <input type="number" class="form-control pqty" value="<?= $row[product_qty] ?>">
                       </div>
                     </div>
-                    <input type="hidden" class="pname" value="<?= $row['label'] ?>">
-                    <input type="hidden" class="pprice" value="<?= $row['price'] ?>">
-                    <input type="hidden" class="pimage" value="<?= $row['image'] ?>">
-                    <input type="hidden" class="pid" value="<?= $row['sender_id'] ?>">
+                    <input type="hidden" class="pname" value="<?= $row[id] ?>">
+                    <input type="hidden" class="pprice" value="<?= $row[product_price] ?>">
+                    <input type="hidden" class="pimage" value="<?= $row['product_image'] ?>">
+                    <input type="hidden" class="pid" value="<?= $row['id'] ?>">
                     
                     <button class="btn btn-default btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;<a href="cart.php">Add to
                   cart</a></button>                  </form>

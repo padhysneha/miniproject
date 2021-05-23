@@ -5,8 +5,8 @@
 	$allItems = '';
 	$items = [];
 
-	$sql = "SELECT CONCAT(name, '(',qty,')') AS ItemQty, total_price FROM cart";
-	$stmt = $conn->prepare("SELECT * FROM cart");
+	$sql = "SELECT CONCAT(product_name, '(',qty,')') AS ItemQty, total_price FROM cart";
+	$stmt = $conn->prepare($sql);
 	$stmt->execute();
 	$result = $stmt->get_result();
 	while ($row = $result->fetch_assoc()) {
@@ -20,24 +20,18 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="author" content="AwesomeWare">
+  <meta name="author" content="Sahil Kumar">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Checkout</title>
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css' />
   <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css' />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Navbar start -->
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
     <!-- Brand -->
-    <a class="navbar-brand" href="mainpage.php">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="fab fa-asymmetrik"></i> &nbsp; &nbsp;AwesomeWare</a>
+    <a class="navbar-brand" href="index.php">&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<i class="fab fa-asymmetrik"></i> &nbsp; &nbsp;AwesomeWare</a>
     <!-- Toggler/collapsibe Button -->
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
@@ -45,35 +39,30 @@
     <!-- Navbar links -->
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
-        <!--li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
-        </li--->
-  <ul class="mainmenu">
-  <li><a href="" class="nav-link active" ><i class="fas fa-th-list"></i>Category</a>
-      <ul class="submenu">
-      <li><a href="tandt.php">Tops</a></li>
-        <li><a href="kids.php">Bottoms</a></li>
-        <li><a href="footwear.php">Footwear</a></li>
-        <li><a href="jeans.php">Jeans</a></li>
-      </ul>
-    </li>
-  </ul>
-<li class="nav-item">
-          <a class="nav-link active" href="mainpage.php"><i class="fab fa-angellist"></i></i> All Products</a>
+      <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="footwear.php" target="_blank">Footwear</a>
+    <a class="dropdown-item" href="jeans.php" target="_blank">Jeans </a>
+    <a class="dropdown-item" href="tandt.php" target="_blank"> T-shirts</a>
+    <a class="dropdown-item" href="kids.php" target="_blank">Kids</a>
+  </div>
+</div>
+        <li class="nav-item">
+          <a class="nav-link active" href="index.php"><i class="far fa-smile-wink"></i> All Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
+          <a class="nav-link" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="auth/logout.php"><i class="far fa-user-circle"></i> Logout </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
+          <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a>
         </li>
       </ul>
     </div>
   </nav>
-  <!-- Navbar end -->
 
   <div class="container">
     <div class="row justify-content-center">
@@ -85,7 +74,7 @@
           <h5><b>Total Amount Payable : </b><?= number_format($grand_total,2) ?>/-</h5>
         </div>
         <form action="" method="post" id="placeOrder">
-          <input type="hidden" name="products" value="<?= $image; ?>">
+          <input type="hidden" name="products" value="<?= $allItems; ?>">
           <input type="hidden" name="grand_total" value="<?= $grand_total; ?>">
           <div class="form-group">
             <input type="text" name="name" class="form-control" placeholder="Enter Name" required>
@@ -103,9 +92,9 @@
           <div class="form-group">
             <select name="pmode" class="form-control">
               <option value="" selected disabled>-Select Payment Mode-</option>
-              <option value="cod">Cash On Delivery</option>
-              <option value="netbanking">Net Banking</option>
-              <option value="cards">Debit/Credit Card</option>
+              <option value="COD">Cash On Delivery</option>
+              <option value="NetBanking">Net Banking</option>
+              <option value="Cards">Debit/Credit Card</option>
             </select>
           </div>
           <div class="form-group">
@@ -126,7 +115,7 @@
     $("#placeOrder").submit(function(e) {
       e.preventDefault();
       $.ajax({
-        url: 'cart.php',
+        url: 'action.php',
         method: 'post',
         data: $('form').serialize() + "&action=order",
         success: function(response) {
@@ -140,7 +129,7 @@
 
     function load_cart_item_number() {
       $.ajax({
-        url: 'addtocart.php',
+        url: 'action.php',
         method: 'get',
         data: {
           cartItem: "cart_item"
@@ -152,6 +141,6 @@
     }
   });
   </script>
-  </body>
-  </html>
-  
+</body>
+
+</html>

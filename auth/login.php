@@ -3,6 +3,7 @@
 <head>
     <title>Login and Signup</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
@@ -20,7 +21,7 @@
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" required>
             </div>
-            <button type="submit" class="btn-btn-dark" >Login</button>
+            <button type="submit" class="btn btn-success me-2">Login</button>
             </form>
         </div>
         <div class="col-md-6 login-right">
@@ -38,7 +39,7 @@
                 <label>Password</label>
                 <input type="password" name="password" class="form-control" required>
             </div>
-            <button type="submit" class="btn-btn-primary">Register</button>
+            <button type="submit" class="btn btn-success me-2">Register</button>
             </form>
         </div>
     </div>
