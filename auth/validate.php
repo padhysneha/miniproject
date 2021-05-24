@@ -14,7 +14,9 @@ $result=mysqli_query($connection,$select);
 $num=mysqli_num_rows($result);
 if($num==1)
 {
-    header('location:/mainpage.php');
+    $reg="insert into login(email_id,password) values('$email','password');
+    mysqli_query($connection,$reg);
+    header('location:/index.php');
 }
 else
 {

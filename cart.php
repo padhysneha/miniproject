@@ -30,7 +30,7 @@
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category  </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="footwear.php" target="_blank">Footwear</a>
-    <a class="dropdown-item" href="jeans.php" target="_blank">Jeans </a>
+    <a class="dropdown-item" href="Pants.php" target="_blank">Pants </a>
     <a class="dropdown-item" href="tandt.php" target="_blank"> T-shirts</a>
     <a class="dropdown-item" href="kids.php" target="_blank">Kids</a>
   </div>
@@ -39,7 +39,7 @@
           <a class="nav-link active" href="index.php"><i class="far fa-smile-wink"></i> All Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
+          <a class="nav-link active" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
         </li>
         <li class="nav-item">
           <a class="nav-link active" href="auth/logout.php"><i class="far fa-user-circle"></i> Logout </a>

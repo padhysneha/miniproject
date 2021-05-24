@@ -43,7 +43,7 @@
   <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Category  </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="footwear.php" target="_blank">Footwear</a>
-    <a class="dropdown-item" href="jeans.php" target="_blank">Jeans </a>
+    <a class="dropdown-item" href="Pants.php" target="_blank">Pants </a>
     <a class="dropdown-item" href="tandt.php" target="_blank"> T-shirts</a>
     <a class="dropdown-item" href="kids.php" target="_blank">Kids</a>
   </div>
